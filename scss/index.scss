@@ -12,12 +12,21 @@ p ~ ul -- selects every ul element preceded by a p element
 @import 'components/reset';
 @import 'components/setup';
 
-#background {
-    background-color: transparent;
-    width: 50%;
+body {
+    text-align: center;
 }
 
 #preview {
-    width: 100%;
-    mix-blend-mode: normal;
+    background-blend-mode: normal;
+    background-color: transparent;
+    background-image: url('');
+    background-size: cover;
+    background-position: center;
+    height: 350px; 
+    width: 350px;
+    border: 1px solid #bbb;
+}
+
+button {
+    margin: 2px 1px;
 }

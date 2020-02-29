@@ -4,7 +4,8 @@ let preview = document.getElementById("preview");
 let colorPicker = document.getElementById("background-color-picker");
 let bg = document.getElementById("background");
 let backgroundColor = "#000000";
-let button = document.getElementsByTagName("button");
+let buttons = document.getElementsByTagName("button");
+let buttonsCount = buttons.length;
 
 fileTag.addEventListener("change", function() {
     changeImage(this);
@@ -19,7 +20,7 @@ function changeImage(input) {
     fileReader = new FileReader();
 
     fileReader.onload = function(e) {
-        preview.setAttribute('src', e.target.result);
+        preview.style.backgroundImage = "url(" + e.target.result + ")";
     }
 
     fileReader.readAsDataURL(input.files[0]);
@@ -31,16 +32,43 @@ function changeImage(input) {
 // Color changing functions
 function getUpdatedBackgroundColorValue (event) {
     backgroundColor = event.target.value;
-    bg.style.backgroundColor = backgroundColor;
+    preview.style.backgroundColor = backgroundColor;
     return backgroundColor;
 }
 
 function changeCSS () {
-    if (button.id == "normal") {
-        preview.style.mixBlendMode = "normal";
-    } else if (button.id == "multiply") {
-        preview.style.mixBlendMode = "multiply";
-    } else if (button.id == "screen") {
-        preview.style.mixBlendMode = "screen";
+
+    for (let i = 0; i <= buttonsCount; i += 1) {
+        buttons[i].onclick = function(e) {
+            if (this.id == "normal") {
+                preview.style.backgroundBlendMode = "normal";
+            } else if (this.id == "multiply") {
+                preview.style.backgroundBlendMode = "multiply";
+            } else if (this.id == "screen") {
+                preview.style.backgroundBlendMode = "screen";
+            } else if (this.id == "overlay") {
+                preview.style.backgroundBlendMode = "overlay";
+            } else if (this.id == "darken") {
+                preview.style.backgroundBlendMode = "darken";
+            } else if (this.id == "lighten") {
+                preview.style.backgroundBlendMode = "lighten";
+            } else if (this.id == "color-dodge") {
+                preview.style.backgroundBlendMode = "color-dodge";
+            } else if (this.id == "color-burn") {
+                preview.style.backgroundBlendMode = "color-burn";
+            } else if (this.id == "difference") {
+                preview.style.backgroundBlendMode = "difference";
+            } else if (this.id == "exclusion") {
+                preview.style.backgroundBlendMode = "exclusion";
+            } else if (this.id == "hue") {
+                preview.style.backgroundBlendMode = "hue";
+            } else if (this.id == "saturation") {
+                preview.style.backgroundBlendMode = "saturation";
+            } else if (this.id == "color") {
+                preview.style.backgroundBlendMode = "color";
+            } else if (this.id == "luminosity") {
+                preview.style.backgroundBlendMode = "luminosity";
+            }
+        }
     }
 }

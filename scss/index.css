@@ -200,13 +200,22 @@ button:active {
   top: 0;
 }
 
-#background {
-  background-color: transparent;
-  width: 50%;
+body {
+  text-align: center;
 }
 
 #preview {
-  width: 100%;
-  mix-blend-mode: multiply;
+  background-blend-mode: normal;
+  background-color: transparent;
+  background-image: url("");
+  background-size: cover;
+  background-position: center;
+  height: 350px;
+  width: 350px;
+  border: 1px solid #bbb;
+}
+
+button {
+  margin: 2px 1px;
 }
 /*# sourceMappingURL=index.css.map */

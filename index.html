@@ -29,9 +29,7 @@
 		<main>
 			<div id="image-selection">
 				<h1>CSS Background Image Blend Mode</h1>
-				<div id="background">
 					<img src="" id="preview">
-				</div>
 			</div>
 			<div id="color-selection">
 				<input type="file" id="filetag">
@@ -39,10 +37,21 @@
 				<label for="color">Color</label>
 			</div>
 
-			<div class="buttons">
-				<button id="normal" onclick="changeCSS()">Normal</button>
-				<button id="multiply" onclick="changeCSS()">Multiply</button>
-				<button id="screen" onclick="changeCSS()">Screen</button>
+			<div class="buttons horizontal-flex">
+				<button id="normal" onclick="changeCSS(this.id)">Normal</button>
+				<button id="multiply" onclick="changeCSS(this.id)">Multiply</button>
+				<button id="screen" onclick="changeCSS(this.id)">Screen</button>
+				<button id="overlay" onclick="changeCSS(this.id)">Overlay</button>
+				<button id="darken" onclick="changeCSS(this.id)">Darken</button>
+				<button id="lighten" onclick="changeCSS(this.id)">Lighten</button>
+				<button id="color-dodge" onclick="changeCSS(this.id)">Dodge</button>
+				<button id="color-burn" onclick="changeCSS(this.id)">Burn</button>
+				<button id="difference" onclick="changeCSS(this.id)">Difference</button>
+				<button id="exclusion" onclick="changeCSS(this.id)">Exclusion</button>
+				<button id="hue" onclick="changeCSS(this.id)">Hue</button>
+				<button id="saturation" onclick="changeCSS(this.id)">Saturation</button>
+				<button id="color" onclick="changeCSS(this.id)">Color</button>
+				<button id="luminosity" onclick="changeCSS(this.id)">Luminosity</button>
 			</div>
 		</main>
 		
