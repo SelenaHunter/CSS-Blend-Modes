@@ -1,0 +1,101 @@
+// TABLE OF CONTENTS
+// 1. Colors
+// 2. Fonts
+// 3. Animations
+// 4. Navbar
+// 5. Header
+// 6. Footer
+// 7. Margins and Padding
+// 8. Page Breaks
+// 9. Buttons
+
+
+// ====== 1. Colors =======
+
+$white: #FFFFFF;
+$grey: #dfdfdf;
+$black: #000000;
+
+$red: #db1a00;
+$yellow: #fffc52;
+$orange: #ffa500;
+$green: #94dd0e;
+$blue: #00a597;
+$purple: #770059;
+
+$background-color: $white;
+
+$font-paragraph-color: $black;
+$font-header-color: $blue;
+
+$link-color: $purple;
+$link-color-hover: $orange;
+
+$nav-link-background-color: $grey;
+$nav-link-background-color-hover: $white;
+$nav-link-color: $link-color;
+$nav-link-color-hover: $link-color-hover;
+$nav-background-color: $purple;
+
+$button-background-color: $blue;
+$button-background-color-hover: $green;
+$button-color: $grey;
+$button-color-hover: $black;
+
+
+// ====== 2. Fonts ========
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300);
+
+$font-header-family: 'Open Sans Condensed', sans-serif;
+$font-body-family: 'Open Sans', sans-serif;
+
+$font-header-base-size-mobile: 16px;
+$font-paragraph-base-size-mobile: 14px;
+
+$font-header-base-size: 24px;
+$font-header-scale: 6; // amount in px that headings grow
+$font-header-scale-mobile: $font-header-scale / 2;
+$font-header-weight: normal;
+
+$font-paragraph-base-size: 16px;
+$font-paragraph-line-height: ($font-paragraph-base-size + 6px);
+
+$link-text-decoration: none;
+$link-text-decoration-hover: none;
+
+
+// ====== 3. Animations =======
+
+$link-transition: color 0.3s ease;
+$button-transition: translateY(2px);
+
+
+// ======= 4. Navbar ========
+
+$nav-link-padding: 0.5rem;
+$nav-width: 100%;
+
+
+// ====== 5. Header ======
+
+// ====== 6. Footer ======
+
+// ====== 7. Margins and Padding ======
+$margin-header: 0.6rem 0;
+$margin-paragraph: 0.4rem 0;
+
+$margin-main: 0 1em;
+$margin-main-mobile: 0 0.3em;
+
+
+// ====== 8. Page Breaks =====
+$desktop: 700px;
+
+
+// ===== 9. Buttons =====
+$button-padding: 6px 12px;
+$button-border: none;
+$button-box-shadow: 0 2px $black;
+$button-box-shadow-active: 0 0px $black;
+$button-cursor: pointer;

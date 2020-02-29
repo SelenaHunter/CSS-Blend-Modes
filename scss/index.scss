@@ -1,0 +1,23 @@
+/* 
+A brief selector recap:
+div p -- selects all p elements inside all div elements
+p.intro -- selects all p elements with class intro
+div > p -- selects all p elements where the parent is a div element
+div + p -- selects all p elements immediately following div elements
+p ~ ul -- selects every ul element preceded by a p element
+[target] -- selects all elements with target attribute
+*/
+
+
+@import 'components/reset';
+@import 'components/setup';
+
+#background {
+    background-color: transparent;
+    width: 50%;
+}
+
+#preview {
+    width: 100%;
+    mix-blend-mode: normal;
+}

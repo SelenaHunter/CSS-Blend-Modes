@@ -1,0 +1,147 @@
+@import 'variables';
+
+// Table of Contents
+// 1. Global
+// 2. Navbar
+// 3. Typography
+// ??. Optional Styles
+
+
+// ===== 1. Global =====
+body {
+    background-color: $background-color;
+    color: $font-paragraph-color;
+}
+
+main {
+    // Mobile styles
+    margin: $margin-main-mobile;
+
+    // Desktop styles
+    @media all and (min-width: $desktop) {
+        margin: $margin-main;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-header-family;
+    margin: $margin-header;
+    color: $font-header-color
+}
+
+a {
+    color: $link-color;
+    text-decoration: $link-text-decoration;
+
+    &:hover {
+        color: $link-color-hover;
+        transition: $link-transition;
+        text-decoration: $link-text-decoration-hover;
+    }
+}
+
+
+// ===== 2. Navbar =====
+.navbar {
+    width: $nav-width;
+    background-color: $nav-background-color;
+
+    li {
+        background-color: $nav-link-background-color;
+
+        &:hover {
+            background-color: $nav-link-background-color-hover;
+        }
+
+        a {
+            color: $nav-link-color;
+            padding: $nav-link-padding;
+
+            &:hover {
+                color: $nav-link-color-hover;
+            }
+        }
+    }
+}
+
+
+// ===== 3. Typography =====
+// Mobile styles
+@for $i from 1 through 6 {
+    h#{$i} {
+    font-size: $font-header-base-size-mobile + $font-header-scale-mobile * (6 - $i);
+    font-weight: $font-header-weight;
+    }
+}
+
+p, a, label {
+    font-family: $font-body-family;
+    font-size: $font-paragraph-base-size-mobile;
+    line-height: $font-paragraph-line-height;
+}
+
+p {
+    padding: $margin-paragraph;
+}
+
+// Desktop styles
+@media all and (min-width: $desktop) {
+    @for $i from 1 through 6 {
+        h#{$i} {
+        font-size: $font-header-base-size + $font-header-scale * (6 - $i);
+        font-weight: $font-header-weight;
+        }
+    }
+    p, a {
+        font-size: $font-paragraph-base-size;
+    }
+}
+
+
+// ===== Buttons =====
+
+button {
+    border: $button-border;
+    color: $button-color;
+    background-color: $button-background-color;
+    padding: $button-padding;
+    cursor: $button-cursor;
+    box-shadow: $button-box-shadow;
+    
+    &:hover {
+        color: $button-color-hover;
+        background-color: $button-background-color-hover;
+    }
+
+    &:active {
+        transform: $button-transition;
+        box-shadow: $button-box-shadow-active;;
+    }
+}
+
+// ===== ??. Optional Styles =====
+.horizontal-flex {
+    // Mobile styles
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    list-style: none;
+
+    li {
+        width: 100%;
+    }
+
+    // Desktop styles
+    @media all and (min-width: $desktop) {
+        justify-content: flex-start;
+        li {
+            width: auto;
+        }
+    }
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}

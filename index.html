@@ -1,0 +1,59 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Title</title>
+	<meta name="description" content="description">
+	<meta name="author" content="Selena Hunter">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<link rel="stylesheet" href="scss/index.css">
+</head>
+
+<body>
+	<div class="page-container">
+		
+		<!-- NAVIGATION -->
+		<nav class="nav-menu sticky">
+			<nav class="navbar">
+				<ul class="horizontal-flex">
+					<li><a href="#image-selection">Home</a></li>
+				</ul>
+			</nav>
+		</nav>
+	
+		<!-- MAIN -->
+		<main>
+			<div id="image-selection">
+				<h1>CSS Background Image Blend Mode</h1>
+				<div id="background">
+					<img src="" id="preview">
+				</div>
+			</div>
+			<div id="color-selection">
+				<input type="file" id="filetag">
+				<input type="color" id="background-color-picker">
+				<label for="color">Color</label>
+			</div>
+
+			<div class="buttons">
+				<button id="normal" onclick="changeCSS()">Normal</button>
+				<button id="multiply" onclick="changeCSS()">Multiply</button>
+				<button id="screen" onclick="changeCSS()">Screen</button>
+			</div>
+		</main>
+		
+		<!-- FOOTER -->
+		<footer>
+			<p>This is a footer.</p>
+		</footer>
+		
+	</div>
+
+	<script src="scripts.js"></script>
+</body>
+
+</html>
