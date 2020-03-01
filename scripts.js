@@ -1,32 +1,46 @@
 
-let fileTag = document.getElementById("filetag");
+let fileTag1 = document.getElementById("filetag1");
+let fileTag2 = document.getElementById("filetag2");
 let preview = document.getElementById("preview");
-let colorPicker = document.getElementById("background-color-picker");
+let preview2 = document.getElementById("preview2");
+let colorPicker1 = document.getElementById("background-color-picker1");
+let colorPicker2 = document.getElementById("background-color-picker2");
 let bg = document.getElementById("background");
 let backgroundColor = "#000000";
-let buttons = document.getElementsByTagName("button");
-let buttonsCount = buttons.length;
+let backgroundColor2 = "#000000";
 
-fileTag.addEventListener("change", function() {
-    changeImage(this);
+fileTag1.addEventListener("change", function() {
+    changeImage1(this);
 });
 
-colorPicker.addEventListener("change", getUpdatedBackgroundColorValue, false);
+fileTag2.addEventListener("change", function() {
+    changeImage2(this);
+});
 
-function changeImage(input) {
+colorPicker1.addEventListener("change", getUpdatedBackgroundColorValue, false);
+colorPicker2.addEventListener("change", getUpdatedBackgroundColorValue2, false);
+
+function changeImage1(input) {
     let fileReader;
-
     if (input.files && input.files[0]) {
-    fileReader = new FileReader();
-
+        fileReader = new FileReader();
     fileReader.onload = function(e) {
         preview.style.backgroundImage = "url(" + e.target.result + ")";
     }
-
     fileReader.readAsDataURL(input.files[0]);
     }
 }
 
+function changeImage2(input) {
+    let fileReader;
+    if (input.files && input.files[0]) {
+    fileReader = new FileReader();
+    fileReader.onload = function(e) {
+        preview2.style.backgroundImage = "url(" + e.target.result + ")";
+    }
+    fileReader.readAsDataURL(input.files[0]);
+}
+}
 
 
 // Color changing functions
@@ -35,40 +49,16 @@ function getUpdatedBackgroundColorValue (event) {
     preview.style.backgroundColor = backgroundColor;
     return backgroundColor;
 }
+function getUpdatedBackgroundColorValue2 (event) {
+    backgroundColor2 = event.target.value;
+    preview2.style.backgroundColor = backgroundColor2;
+    return backgroundColor;
+}
 
 function changeCSS () {
-
-    for (let i = 0; i <= buttonsCount; i += 1) {
-        buttons[i].onclick = function(e) {
-            if (this.id == "normal") {
-                preview.style.backgroundBlendMode = "normal";
-            } else if (this.id == "multiply") {
-                preview.style.backgroundBlendMode = "multiply";
-            } else if (this.id == "screen") {
-                preview.style.backgroundBlendMode = "screen";
-            } else if (this.id == "overlay") {
-                preview.style.backgroundBlendMode = "overlay";
-            } else if (this.id == "darken") {
-                preview.style.backgroundBlendMode = "darken";
-            } else if (this.id == "lighten") {
-                preview.style.backgroundBlendMode = "lighten";
-            } else if (this.id == "color-dodge") {
-                preview.style.backgroundBlendMode = "color-dodge";
-            } else if (this.id == "color-burn") {
-                preview.style.backgroundBlendMode = "color-burn";
-            } else if (this.id == "difference") {
-                preview.style.backgroundBlendMode = "difference";
-            } else if (this.id == "exclusion") {
-                preview.style.backgroundBlendMode = "exclusion";
-            } else if (this.id == "hue") {
-                preview.style.backgroundBlendMode = "hue";
-            } else if (this.id == "saturation") {
-                preview.style.backgroundBlendMode = "saturation";
-            } else if (this.id == "color") {
-                preview.style.backgroundBlendMode = "color";
-            } else if (this.id == "luminosity") {
-                preview.style.backgroundBlendMode = "luminosity";
-            }
-        }
-    }
+    if (event.srcElement.className == "button1") {
+        preview.style.backgroundBlendMode = event.srcElement.id;
+    } else {
+        preview2.style.backgroundBlendMode = event.srcElement.id;
+    } 
 }
