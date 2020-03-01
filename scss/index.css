@@ -40,7 +40,7 @@ main {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Open Sans Condensed", sans-serif;
   margin: 0.6rem 0;
-  color: #00a597;
+  color: #00998c;
 }
 
 a {
@@ -149,24 +149,24 @@ p {
 
 button {
   border: none;
-  color: #dfdfdf;
-  background-color: #00a597;
+  color: #000000;
+  background-color: #8aece4;
   padding: 6px 12px;
   cursor: pointer;
-  -webkit-box-shadow: 0 2px #000000;
-          box-shadow: 0 2px #000000;
+  -webkit-box-shadow: 0px 1px 3px #00998c;
+          box-shadow: 0px 1px 3px #00998c;
 }
 
 button:hover {
   color: #000000;
-  background-color: #94dd0e;
+  background-color: #00998c;
 }
 
 button:active {
   -webkit-transform: translateY(2px);
           transform: translateY(2px);
-  -webkit-box-shadow: 0 0px #000000;
-          box-shadow: 0 0px #000000;
+  -webkit-box-shadow: 0 0 0 #000000;
+          box-shadow: 0 0 0 #000000;
 }
 
 .horizontal-flex {
@@ -200,7 +200,7 @@ button:active {
   top: 0;
 }
 
-body {
+h1, h2 {
   text-align: center;
 }
 
@@ -236,11 +236,32 @@ body {
           clip-path: polygon(100% 0%, 0 100%, 100% 100%);
 }
 
+.input-wrapper {
+  background-color: #dfdfdf;
+}
+
 button {
   margin: 2px 1px;
 }
 
-.button1 {
-  background-color: #db1a00;
+.selection-wrapper1 {
+  position: absolute;
+  width: 50%;
+  padding: 0 1em;
+}
+
+.selection-wrapper2 {
+  position: absolute;
+  width: 50%;
+  right: 0;
+  padding: 0 1em;
+}
+
+.buttons-wrapper {
+  width: 100%;
+}
+
+#filetag1, #filetag2 {
+  width: 100%;
 }
 /*# sourceMappingURL=index.css.map */

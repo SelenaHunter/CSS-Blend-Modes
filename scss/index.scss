@@ -12,10 +12,9 @@ p ~ ul -- selects every ul element preceded by a p element
 @import 'components/reset';
 @import 'components/setup';
 
-body {
+h1, h2 {
     text-align: center;
 }
-
 
 .preview-wrapper {
     height: 350px; 
@@ -48,14 +47,31 @@ body {
     clip-path: polygon(100% 0%, 0 100%, 100% 100%);
 }
 
-.color-selection-wrapper {
-    
+.input-wrapper {
+    background-color: $grey;
 }
 
 button {
     margin: 2px 1px;
 }
 
-.button1 {
-    background-color: $red;
+.selection-wrapper1 {
+    position: absolute;
+    width: 50%;
+    padding: 0 1em;
+}
+
+.selection-wrapper2 {
+    position: absolute;
+    width: 50%;
+    right: 0;
+    padding: 0 1em;
+}
+
+.buttons-wrapper {
+    width: 100%;
+}
+
+#filetag1, #filetag2 {
+    width: 100%;
 }
