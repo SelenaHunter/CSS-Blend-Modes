@@ -1,9 +1,11 @@
-
+// Add and use all event listeners for the page
 document.addEventListener("change", function(event) {
     if (event.target.classList.contains('filetag')) {
         changeImage(this.activeElement);
     } else if (event.target.classList.contains('color-picker')) {
-        getUpdatedBackgroundColorValue(this.activeElement);
+        getBackgroundColorValue(this.activeElement);
+    } else if (event.target.classList.contains('opacity-control')) {
+        changeOpacity(this.activeElement);
     }
 }, false);
 
@@ -24,14 +26,27 @@ function changeImage(input) {
     }
 }
 
-function getUpdatedBackgroundColorValue(input) {
-    let backgroundColor = input.value;
+function changeOpacity(input) {
+    if (input.id == 'opacity') {
+        let output = document.getElementById("opacity-amount");
+        output.innerHTML = input.value;
+        preview.style.opacity = input.value + "%";   
+    } else {
+        let output = document.getElementById("opacity-amount2");
+        output.innerHTML = input.value;
+        preview2.style.opacity = input.value + "%";   
+        
+    }
+}
+
+function getBackgroundColorValue(input) {
+    let color = input.value;
     if (input.id == "background-color-picker1") {
-        preview.style.backgroundColor = backgroundColor;
+        preview.style.backgroundColor = color;
         return backgroundColor;
     } else {
-        preview2.style.backgroundColor = backgroundColor;
-        return backgroundColor;
+        preview2.style.backgroundColor = color;
+        return color;
     }
 }
 
@@ -43,22 +58,4 @@ function changeCSSBlendMode () {
     } else {
         preview2.style.backgroundBlendMode = event.srcElement.id;
     } 
-}
-
-let rangeSlider = document.getElementById("opacity");
-let output = document.getElementById("opacity-amount");
-output.innerHTML = rangeSlider.value;
-
-rangeSlider.oninput = function() {
-  output.innerHTML = this.value;
-  preview.style.opacity = this.value + "%";
-}
-
-let rangeSlider2 = document.getElementById("opacity2");
-let output2 = document.getElementById("opacity-amount2");
-output2.innerHTML = rangeSlider2.value;
-
-rangeSlider2.oninput = function() {
-  output2.innerHTML = this.value;
-  preview2.style.opacity = this.value + "%";
 }

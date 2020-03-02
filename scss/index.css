@@ -259,7 +259,8 @@ button {
 }
 
 #filetag1, #filetag2 {
-  width: 100%;
+  max-width: 100%;
+  text-align: center;
   background-color: #dfdfdf;
   margin: 1em 0;
 }
@@ -272,7 +273,11 @@ button {
   display: block;
 }
 
-#opacity-wrapper {
+.opacity-wrapper {
   margin: 0em 1em 1em 1em;
+}
+
+.clip-buttons {
+  text-align: center;
 }
 /*# sourceMappingURL=index.css.map */
