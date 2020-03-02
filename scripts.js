@@ -18,8 +18,6 @@ function changeImage(input) {
                 preview.style.backgroundImage = "url(" + e.target.result + ")";
             } else {
                 preview2.style.backgroundImage = "url(" + e.target.result + ")";
-                let opacityWrapper = document.getElementById("opacity-wrapper");
-                opacityWrapper.style.display = "block";
             }
         }
         fileReader.readAsDataURL(input.files[0]);   
@@ -43,19 +41,35 @@ function getBackgroundColorValue(input) {
     let color = input.value;
     if (input.id == "background-color-picker1") {
         preview.style.backgroundColor = color;
-        return backgroundColor;
     } else {
         preview2.style.backgroundColor = color;
-        return color;
     }
 }
 
-function changeCSSBlendMode () {
-    let preview = document.getElementById("preview");
-    let preview2 = document.getElementById("preview2");
+function changeCSSBlendMode() {
     if (event.srcElement.className == "button1") {
         preview.style.backgroundBlendMode = event.srcElement.id;
     } else {
         preview2.style.backgroundBlendMode = event.srcElement.id;
+    } 
+}
+
+function changeClip() {
+    if (event.srcElement.className == "clip-button") {
+        if (event.srcElement.id == "full") {
+            preview.style.clipPath = "polygon(0 0, 100% 0, 100% 100%, 0% 100%)";
+        } else if (event.srcElement.id == "half") {
+            preview.style.clipPath = "polygon(0 0, 50% 0, 50% 100%, 0% 100%)";
+        } else {
+            preview.style.clipPath = "polygon(0 0, 0% 100%, 100% 100%)";
+        }
+    } else {
+        if (event.srcElement.id == "full") {
+            preview2.style.clipPath = "polygon(0 0, 100% 0, 100% 100%, 0% 100%)";
+        } else if (event.srcElement.id == "half") {
+            preview2.style.clipPath = "polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%)";
+        } else {
+            preview2.style.clipPath = "polygon(100% 0, 0% 100%, 100% 100%)";
+        }
     } 
 }
