@@ -225,6 +225,7 @@ button {
   background-position: center;
   width: 100%;
   height: 100%;
+  opacity: 100%;
 }
 
 .preview-wrapper #preview2 {
@@ -253,11 +254,25 @@ button {
   padding: 0 2em;
 }
 
-.buttons-wrapper {
-  width: 100%;
+.buttons {
+  margin: 0.5em 0;
 }
 
 #filetag1, #filetag2 {
   width: 100%;
+  background-color: #dfdfdf;
+  margin: 1em 0;
+}
+
+.color-selection {
+  text-align: center;
+}
+
+.color-selection label {
+  display: block;
+}
+
+#opacity-wrapper {
+  margin: 0em 1em 1em 1em;
 }
 /*# sourceMappingURL=index.css.map */

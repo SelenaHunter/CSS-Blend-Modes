@@ -13,9 +13,6 @@ p ~ ul -- selects every ul element preceded by a p element
 @import 'components/setup';
 
 
-body {
-}
-
 h1, h2 {
     text-align: center;
 }
@@ -40,6 +37,7 @@ button {
         background-position: center;
         width: 100%;
         height: 100%;
+        opacity: 100%;
     }
 
     #preview2 {
@@ -69,10 +67,25 @@ button {
     padding: 0 2em;
 }
 
-.buttons-wrapper {
-    width: 100%;
+.buttons {
+    margin: 0.5em 0;
 }
 
 #filetag1, #filetag2 {
     width: 100%;
+    background-color: $grey;
+    margin: 1em 0;
+}
+
+.color-selection {
+    text-align: center;
+
+    label {
+        display: block;
+    }
+}
+
+#opacity-wrapper {
+    margin: 0em 1em 1em 1em;
+   // display: none;
 }

@@ -27,8 +27,12 @@
 				<div class="selection-wrapper1">
 					<h2>Image 1</h2>
 					<div class="color-selection">
-						<input type="file" class="filetag" id="filetag1">
-						<input type="color" id="background-color-picker1" class="color-picker">
+						<input type="file" class="filetag" id="filetag1" autocomplete="off">
+						<div id="opacity-wrapper">
+							<input type="range" class="opacity-control" id="opacity" min="0" max="100" value="100" autocomplete="off">
+							<label for="opacity" class="opacity-label">Opacity: <span id="opacity-amount"></span>%</label>
+						</div>
+						<input type="color" id="background-color-picker1" class="color-picker" autocomplete="off">
 						<label for="color1">Color 1</label>
 					</div>
 					<div class="buttons horizontal-flex">
@@ -52,8 +56,12 @@
 				<div class="selection-wrapper2">
 					<h2>Image 2</h2>
 					<div class="color-selection">
-						<input type="file" class="filetag" id="filetag2">
-						<input type="color" id="background-color-picker2"  class="color-picker">
+						<input type="file" class="filetag" id="filetag2" autocomplete="off">
+						<div id="opacity-wrapper2">
+							<input type="range" class="opacity-control" id="opacity2" min="0" max="100" value="100" autocomplete="off">
+							<label for="opacity2" class="opacity-label">Opacity: <span id="opacity-amount2"></span>%</label>
+						</div>
+						<input type="color" id="background-color-picker2" class="color-picker" autocomplete="off">
 						<label for="color2">Color 2</label>
 					</div>
 					<div class="buttons horizontal-flex">

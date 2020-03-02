@@ -16,6 +16,8 @@ function changeImage(input) {
                 preview.style.backgroundImage = "url(" + e.target.result + ")";
             } else {
                 preview2.style.backgroundImage = "url(" + e.target.result + ")";
+                let opacityWrapper = document.getElementById("opacity-wrapper");
+                opacityWrapper.style.display = "block";
             }
         }
         fileReader.readAsDataURL(input.files[0]);   
@@ -41,4 +43,22 @@ function changeCSSBlendMode () {
     } else {
         preview2.style.backgroundBlendMode = event.srcElement.id;
     } 
+}
+
+let rangeSlider = document.getElementById("opacity");
+let output = document.getElementById("opacity-amount");
+output.innerHTML = rangeSlider.value;
+
+rangeSlider.oninput = function() {
+  output.innerHTML = this.value;
+  preview.style.opacity = this.value + "%";
+}
+
+let rangeSlider2 = document.getElementById("opacity2");
+let output2 = document.getElementById("opacity-amount2");
+output2.innerHTML = rangeSlider2.value;
+
+rangeSlider2.oninput = function() {
+  output2.innerHTML = this.value;
+  preview2.style.opacity = this.value + "%";
 }
