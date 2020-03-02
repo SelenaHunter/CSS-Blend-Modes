@@ -18,12 +18,11 @@ function changeImage(input) {
                 preview2.style.backgroundImage = "url(" + e.target.result + ")";
             }
         }
-    fileReader.readAsDataURL(input.files[0]);
-}
+        fileReader.readAsDataURL(input.files[0]);   
+    }
 }
 
-// Color changing functions
-function getUpdatedBackgroundColorValue (input) {
+function getUpdatedBackgroundColorValue(input) {
     let backgroundColor = input.value;
     if (input.id == "background-color-picker1") {
         preview.style.backgroundColor = backgroundColor;
@@ -34,7 +33,7 @@ function getUpdatedBackgroundColorValue (input) {
     }
 }
 
-function changeCSS () {
+function changeCSSBlendMode () {
     let preview = document.getElementById("preview");
     let preview2 = document.getElementById("preview2");
     if (event.srcElement.className == "button1") {
