@@ -57,19 +57,33 @@ button {
 
 
 .selection-wrapper1 {
-    position: absolute;
-    width: 50%;
-    padding: 0 2em;
+    padding: 0.5em;
+    margin-top: 3em;
+    
+    @media all and (min-width: $desktop) {
+        position: absolute;
+        width: 50%;
+        padding: 0 2em;
+        margin-top: 0;
+    }
 }
 
 .selection-wrapper2 {
-    position: absolute;
-    width: 50%;
-    right: 0;
-    padding: 0 2em;
+    padding: 0.5em;
+    margin-top: 3em;
+
+    @media all and (min-width: $desktop) {
+        position: absolute;
+        width: 50%;
+        right: 0;
+        padding: 0 2em;
+        margin-top: 0;
+    }
 }
 
-.buttons {
+
+.clip-buttons {
+    text-align: center;
     margin: 0.5em 0;
 }
 
@@ -82,16 +96,26 @@ button {
 
 .color-selection {
     text-align: center;
-
+    
     label {
         display: block;
     }
 }
 
-.opacity-wrapper {
-    margin: 0em 1em 1em 1em;
+.buttons {
+    margin: 0.5em 0;
 }
 
-.clip-buttons {
-    text-align: center;
+.opacity-wrapper {
+    margin: 0em 1em 1em 1em;
+
+    label {
+        display: block;
+        margin-top: -0.5em;
+    }
 }
+
+.active {
+    background-color: $blue;
+}
+

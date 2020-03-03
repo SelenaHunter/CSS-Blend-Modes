@@ -126,6 +126,7 @@ button {
     flex-wrap: wrap;
     text-align: center;
     list-style: none;
+    justify-content: center;
 
     li {
         width: 100%;
@@ -133,7 +134,6 @@ button {
 
     // Desktop styles
     @media all and (min-width: $desktop) {
-        justify-content: flex-start;
         li {
             width: auto;
         }

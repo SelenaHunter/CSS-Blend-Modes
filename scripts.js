@@ -61,15 +61,56 @@ function changeClip() {
         } else if (event.srcElement.id == "half") {
             preview.style.clipPath = "polygon(0 0, 50% 0, 50% 100%, 0% 100%)";
         } else {
-            preview.style.clipPath = "polygon(0 0, 0% 100%, 100% 100%)";
+            preview.style.clipPath = "polygon(0 0, 0% 100%, 100% 0)";
         }
     } else {
-        if (event.srcElement.id == "full") {
+        if (event.srcElement.id == "full2") {
             preview2.style.clipPath = "polygon(0 0, 100% 0, 100% 100%, 0% 100%)";
-        } else if (event.srcElement.id == "half") {
+        } else if (event.srcElement.id == "half2") {
             preview2.style.clipPath = "polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%)";
         } else {
             preview2.style.clipPath = "polygon(100% 0, 0% 100%, 100% 100%)";
         }
     } 
 }
+
+// Add (and remember) the selected button for each category of buttons
+let clipButtons = document.querySelectorAll(".clip-button");
+let prevClipButton = clipButtons[0];
+[].forEach.call(clipButtons, function(clipButton) {
+    clipButton.addEventListener("click", function() {
+        prevClipButton.classList.remove("active");
+        clipButton.classList.add("active");
+        prevClipButton = clipButton; // remember previously active button
+    });
+});
+
+let clipButtons2 = document.querySelectorAll(".clip-button2");
+let prevClipButton2 = clipButtons2[0];
+[].forEach.call(clipButtons2, function(clipButton2) {
+    clipButton2.addEventListener("click", function() {
+        prevClipButton2.classList.remove("active");
+        clipButton2.classList.add("active");
+        prevClipButton2 = clipButton2;
+    });
+});
+
+let buttons = document.querySelectorAll(".button1");
+let prevButton = buttons[0];
+[].forEach.call(buttons, function(button) {
+    button.addEventListener("click", function() {
+        prevButton.classList.remove("active");
+        button.classList.add("active");
+        prevButton = button;
+    });
+});
+
+let buttons2 = document.querySelectorAll(".button2");
+let prevButton2 = buttons2[0];
+[].forEach.call(buttons2, function(button2) {
+    button2.addEventListener("click", function() {
+        prevButton2.classList.remove("active");
+        button2.classList.add("active");
+        prevButton2 = button2;
+    });
+});
